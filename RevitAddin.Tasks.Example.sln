@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29613.14
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34316.72
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{5AA6F050-8335-4EAA-8F40-65B243D0330B}") = "RevitAddin.Tasks.Example", "RevitAddin.Tasks.Example\RevitAddin.Tasks.Example.csproj", "{C03003C5-0B43-4110-8296-1417EF2A9608}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RevitAddin.Tasks.Example", "RevitAddin.Tasks.Example\RevitAddin.Tasks.Example.csproj", "{C03003C5-0B43-4110-8296-1417EF2A9608}"
 EndProject
-Project("{5AA6F050-8335-4EAA-8F40-65B243D0330B}") = "Build", "Build\Build.csproj", "{BBC7BE6B-248A-4FBA-A970-59D113A8CF1E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Build", "Build\Build.csproj", "{BBC7BE6B-248A-4FBA-A970-59D113A8CF1E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution", "Solution", "{8131A0C9-EF0E-4032-9BAC-06BCBA9F0175}"
 	ProjectSection(SolutionItems) = preProject
@@ -16,18 +16,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution", "Solution", "{81
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		2017|Any CPU = 2017|Any CPU
+		2025|Any CPU = 2025|Any CPU
 		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C03003C5-0B43-4110-8296-1417EF2A9608}.2017|Any CPU.ActiveCfg = 2017|Any CPU
+		{C03003C5-0B43-4110-8296-1417EF2A9608}.2017|Any CPU.Build.0 = 2017|Any CPU
+		{C03003C5-0B43-4110-8296-1417EF2A9608}.2025|Any CPU.ActiveCfg = 2025|Any CPU
+		{C03003C5-0B43-4110-8296-1417EF2A9608}.2025|Any CPU.Build.0 = 2025|Any CPU
 		{C03003C5-0B43-4110-8296-1417EF2A9608}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C03003C5-0B43-4110-8296-1417EF2A9608}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C03003C5-0B43-4110-8296-1417EF2A9608}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C03003C5-0B43-4110-8296-1417EF2A9608}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBC7BE6B-248A-4FBA-A970-59D113A8CF1E}.2017|Any CPU.ActiveCfg = Release|Any CPU
+		{BBC7BE6B-248A-4FBA-A970-59D113A8CF1E}.2025|Any CPU.ActiveCfg = Release|Any CPU
 		{BBC7BE6B-248A-4FBA-A970-59D113A8CF1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BBC7BE6B-248A-4FBA-A970-59D113A8CF1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C1D93B27-4785-4D8B-B62B-A6A7E4E05E33}
 	EndGlobalSection
 EndGlobal
