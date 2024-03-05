@@ -64,7 +64,7 @@
     <When Condition="$(Configuration.Contains('2025'))">
       <PropertyGroup>
         <RevitVersion>2025</RevitVersion>
-        <TargetFramework>net7.0-windows</TargetFramework>
+        <TargetFramework>net8.0-windows</TargetFramework>
       </PropertyGroup>
     </When>
     <Otherwise>
