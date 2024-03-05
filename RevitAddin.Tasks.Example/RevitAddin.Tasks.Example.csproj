@@ -108,7 +108,7 @@
 
   <PropertyGroup>
     <PackageId>RevitAddin.Tasks.Example</PackageId>
-    <Version>1.0.0</Version>
+    <Version>2.0.0</Version>
     <ProjectGuid>{C03003C5-0B43-4110-8296-1417EF2A9608}</ProjectGuid>
   </PropertyGroup>
 
@@ -135,13 +135,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ricaun.Revit.UI" Version="*" />
-    <PackageReference Include="ricaun.Revit.Mvvm" Version="*" />
+    <Compile Remove="Views\**" />
+    <EmbeddedResource Remove="Views\**" />
+    <None Remove="Views\**" />
+    <Page Remove="Views\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Revit\App.cs" />
-    <None Include="Revit\Commands\Command.cs" />
+    <PackageReference Include="ricaun.Revit.UI" Version="*" />
+    <PackageReference Include="ricaun.Revit.Mvvm" Version="*" />
   </ItemGroup>
 
   <ItemGroup>
