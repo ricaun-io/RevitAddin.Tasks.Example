@@ -64,7 +64,7 @@
     <When Condition="$(Configuration.Contains('2025'))">
       <PropertyGroup>
         <RevitVersion>2025</RevitVersion>
-        <TargetFramework>net7.0-windows</TargetFramework>
+        <TargetFramework>net8.0-windows</TargetFramework>
       </PropertyGroup>
     </When>
     <Otherwise>
@@ -108,7 +108,7 @@
 
   <PropertyGroup>
     <PackageId>RevitAddin.Tasks.Example</PackageId>
-    <Version>1.0.0</Version>
+    <Version>2.0.0</Version>
     <ProjectGuid>{C03003C5-0B43-4110-8296-1417EF2A9608}</ProjectGuid>
   </PropertyGroup>
 
@@ -137,11 +137,7 @@
   <ItemGroup>
     <PackageReference Include="ricaun.Revit.UI" Version="*" />
     <PackageReference Include="ricaun.Revit.Mvvm" Version="*" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Revit\App.cs" />
-    <None Include="Revit\Commands\Command.cs" />
+    <PackageReference Include="ricaun.Revit.UI.Tasks" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -162,6 +158,10 @@
 
   <ItemGroup>
     <PackageReference Include="Revit_All_Main_Versions_API_x64" Version="$(RevitVersion).*-*" IncludeAssets="build; compile" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup Condition="!$(TargetFramework.StartsWith('net4'))">
+    <PackageReference Include="System.Drawing.Common" Version="7.*" IncludeAssets="build; compile" PrivateAssets="All" />
   </ItemGroup>
 
 </Project>

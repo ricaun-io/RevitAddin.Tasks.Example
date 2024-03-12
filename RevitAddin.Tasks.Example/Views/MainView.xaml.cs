@@ -1,7 +1,9 @@
 ﻿using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
-using RevitAddin.Tasks.Example.Services;
+using Autodesk.Revit.UI.Selection;
 using ricaun.Revit.Mvvm;
+using ricaun.Revit.UI.Drawing;
+using ricaun.Revit.UI.Tasks;
 using System;
 using System.Threading.Tasks;
 using System.Windows;
@@ -20,6 +22,17 @@ namespace RevitAddin.Tasks.Example.Views
             InitializeComponent();
             InitializeWindow();
             this.revitTask = revitTask;
+
+            this.Loaded += async (s, e) =>
+            {
+                var title = await revitTask.Run((uiapp) =>
+                {
+                    Document document = uiapp.ActiveUIDocument.Document;
+                    return document.Title;
+                });
+                Title = title;
+            };
+
         }
 
         #region InitializeWindow
@@ -35,12 +48,42 @@ namespace RevitAddin.Tasks.Example.Views
 
         private async Task Button_Click()
         {
-            var title = await revitTask.Run((uiapp) =>
+            try
             {
-                Document document = uiapp.ActiveUIDocument.Document;
-                return document.Title;
-            });
-            Title = title;
+                this.Hide();
+                var revitElement = await revitTask.Run((uiapp) =>
+                {
+                    UIDocument uidoc = uiapp.ActiveUIDocument;
+                    Document document = uidoc.Document;
+                    View view = uidoc.ActiveView;
+                    Selection selection = uidoc.Selection;
+                    var reference = selection.PickObject(ObjectType.Element, "Select an element");
+                    var element = document.GetElement(reference);
+                    return element;
+                });
+
+                Title = revitElement.Name;
+
+                var revitElementTypeImage = await revitTask.Run(() =>
+                {
+                    var element = revitElement;
+                    var document = element.Document;
+
+                    element = document.GetElement(element.GetTypeId());
+
+                    if (element is ElementType elementType)
+                    {
+                        return elementType.GetPreviewImage(new System.Drawing.Size(256, 256));
+                    }
+                    return null;
+                });
+
+                Icon = revitElementTypeImage?.GetBitmapSource();
+            }
+            finally
+            {
+                this.Show();
+            }
         }
 
     }

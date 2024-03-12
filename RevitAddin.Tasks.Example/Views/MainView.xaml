@@ -8,7 +8,11 @@
         mc:Ignorable="d"
         Background="WhiteSmoke">
 
-    <Grid Margin="24">
-        <Button Height="24" Width="96" Command="{Binding ButtonCommand}">Click in me!</Button>
-    </Grid>
+    <StackPanel Margin="24">
+        <Image Source="{Binding Icon}" Height="128" Width="128"></Image>
+        <Grid Margin="4"/>
+        <Button Height="24"
+                Width="96"
+                Command="{Binding ButtonCommand}">Select element!</Button>
+    </StackPanel>
 </Window>
