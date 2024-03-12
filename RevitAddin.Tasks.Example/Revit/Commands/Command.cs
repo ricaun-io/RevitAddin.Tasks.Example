@@ -13,14 +13,7 @@ namespace RevitAddin.Tasks.Example.Revit.Commands
         {
             UIApplication uiapp = commandData.Application;
 
-            Task.Run(async () =>
-            {
-                await Task.Delay(1000);
-                await App.RevitTask.Run((uiapp) =>
-                {
-                    TaskDialog.Show("Revit", $"Hello from RevitTask {uiapp.ActiveUIDocument.Document.Title}");
-                });
-            });
+            new Views.MainView(App.RevitTask).Show();
 
             return Result.Succeeded;
         }
