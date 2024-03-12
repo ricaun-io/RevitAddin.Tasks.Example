@@ -30,7 +30,7 @@ This project uses the [ricaun.Revit.Mvvm](https://github.com/ricaun-io/ricaun.Re
 
 Video in english with the creation of this project.
 
-[![VideoIma1]][Video1]
+[![VideoIma1]][Video1] [![VideoIma2]][Video2] [![VideoIma3]][Video3]
 
 ## License
 
@@ -42,3 +42,7 @@ Do you like this project? Please [star this project on GitHub](../../stargazers)
 
 [Video1]: https://youtu.be/PxrOxyS-VqY
 [VideoIma1]: https://img.youtube.com/vi/PxrOxyS-VqY/mqdefault.jpg
+[Video2]: https://youtu.be/b30JZa-rW2o
+[VideoIma2]: https://img.youtube.com/vi/b30JZa-rW2o/mqdefault.jpg
+[Video3]: https://youtu.be/wQniKnAyfCQ
+[VideoIma3]: https://img.youtube.com/vi/wQniKnAyfCQ/mqdefault.jpg
